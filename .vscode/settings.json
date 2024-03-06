@@ -1,16 +1,13 @@
 {
-    // VSCode Config
-    // "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
-
     // Prettier Config
     "prettier.arrowParens": "avoid",
     "prettier.printWidth": 100,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
 
-    // Formatter
+    // Editor Config
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
