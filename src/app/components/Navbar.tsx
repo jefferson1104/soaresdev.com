@@ -29,7 +29,7 @@ export const Navbar = () => {
                     href={"/"}
                 >
                     <Image
-                        src="/images/logo.png"
+                        src="/images/logo.svg"
                         alt="Soares Dev"
                         width={150}
                         height={50}
