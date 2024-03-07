@@ -1,9 +1,10 @@
 "use client";
-
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
+// HERO COMPONENT
 export const Hero = () => {
+    /* Renders */
     return (
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -48,7 +49,7 @@ export const Hero = () => {
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                    <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative bg-[#181818]">
+                    <div className="rounded-full w-[320px] h-[320px] lg:w-[420px] lg:h-[420px] relative bg-[#181818]">
                         <Image
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             src="/images/avatar.png"
