@@ -1,8 +1,8 @@
 {
     // Prettier Config
     "prettier.arrowParens": "avoid",
-    "prettier.printWidth": 100,
     "prettier.singleQuote": true,
+    "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
 
     // Editor Config

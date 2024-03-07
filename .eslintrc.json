@@ -12,14 +12,10 @@
 		"no-throw-literal": "error",
 		"no-useless-concat": "error",
 		"no-var": "error",
-		"quotes": [2, "single"],
+		"quotes": [2, "double"],
 		"semi": [2, "always"],
-		"no-unused-vars": [
-			2,
-			{
-				"args": "none",
-				"vars": "all"
-			}
-		]
+		"no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+		"indent": ["error", 4, { "SwitchCase": 1 }],
+		"react/no-unescaped-entities": 0
 	}
 }
