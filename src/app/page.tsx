@@ -1,5 +1,7 @@
+// COMPONENTS
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { About } from "./components/About";
 
 // HOME PAGE
 export default function Home() {
@@ -9,6 +11,7 @@ export default function Home() {
             <Navbar />
             <div className="container mt-24 mx-auto py-4 px-12">
                 <Hero />
+                <About />
             </div>
         </main>
     );
