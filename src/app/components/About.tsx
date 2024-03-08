@@ -8,7 +8,7 @@ import { TabButton } from "./TabButton";
 // ABOUT COMPONENT
 export const About = () => {
     /* States */
-    const [tab, setTab] = useState("education");
+    const [tab, setTab] = useState("skills");
 
     /* Handlers */
     const tabChangeHandler = (id: string) => {
@@ -16,13 +16,85 @@ export const About = () => {
     };
 
     /* Utils */
+    const technologies = [
+        { name: "HTML", path: "/images/technologies/html.svg" },
+        { name: "CSS", path: "/images/technologies/css.svg" },
+        { name: "Bootstrap", path: "/images/technologies/bootstrap.svg" },
+        { name: "TailwindCSS", path: "/images/technologies/tailwindcss.svg" },
+        { name: "Sass", path: "/images/technologies/sass.svg" },
+        { name: "Git", path: "/images/technologies/git.svg" },
+
+        { name: "JavaScript", path: "/images/technologies/javascript.svg" },
+        { name: "TypeScript", path: "/images/technologies/typescript.svg" },
+        { name: "React.js", path: "/images/technologies/reactjs.svg" },
+        { name: "Redux", path: "/images/technologies/redux.svg" },
+        { name: "Node.js", path: "/images/technologies/nodejs.svg" },
+        { name: "Nest.js", path: "/images/technologies/nestjs.svg" },
+
+        { name: "MongoDB", path: "/images/technologies/mongodb.svg" },
+        { name: "MySQL", path: "/images/technologies/mysql.png" },
+        { name: "PostgresSQL", path: "/images/technologies/postgresql.svg" },
+        { name: "Redis", path: "/images/technologies/redis.svg" },
+        { name: "Sequelize", path: "/images/technologies/sequelize.svg" },
+        { name: "Prisma", path: "/images/technologies/prisma.svg" },
+
+        { name: "GraphQL", path: "/images/technologies/graphql.svg" },
+        { name: "Swagger", path: "/images/technologies/swagger.svg" },
+        { name: "Jest", path: "/images/technologies/jest.svg" },
+        { name: "Cypress.js", path: "/images/technologies/cypress.svg" },
+        { name: "Python", path: "/images/technologies/python.svg" },
+        { name: "Markdown", path: "/images/technologies/markdown.svg" },
+
+        { name: "Heroku", path: "/images/technologies/heroku.svg" },
+        { name: "Firebase", path: "/images/technologies/firebase.svg" },
+        { name: "Strapi", path: "/images/technologies/strapi.svg" },
+        { name: "Contentful CMS", path: "/images/technologies/contentful.svg" },
+        { name: "Dato CMS", path: "/images/technologies/datocms.svg" },
+        { name: "Prismic", path: "/images/technologies/prismic.svg" },
+
+        { name: "AWS", path: "/images/technologies/aws.svg" },
+        { name: "Azure", path: "/images/technologies/azure.svg" },
+        { name: "GCP", path: "/images/technologies/gcp.svg" },
+        { name: "Digital Ocean", path: "/images/technologies/digital.svg" },
+        { name: "Vercel", path: "/images/technologies/vercel.svg" },
+        { name: "Netlify", path: "/images/technologies/netlify.svg" },
+
+        { name: "Docker", path: "/images/technologies/docker.svg" },
+        { name: "Kubernetes", path: "/images/technologies/kubernetes.svg" },
+        { name: "Terraform", path: "/images/technologies/terraform.svg" },
+        { name: "GitHub", path: "/images/technologies/github.svg" },
+        { name: "GitLab", path: "/images/technologies/gitlab.svg" }
+    ];
+
     const tabOptions = [
+        {
+            label: "Skills",
+            value: "skills",
+            id: "skills",
+            content: (
+                <div className="grid grid-cols-6 lg:grid-cols-12 gap-4">
+                    {technologies.map((technology, index) => (
+                        <div
+                            key={index}
+                            className="hover:animate-bounce cursor-pointer"
+                        >
+                            <Image
+                                alt={technology.name}
+                                src={technology.path}
+                                width={35}
+                                height={35}
+                            />
+                        </div>
+                    ))}
+                </div>
+            )
+        },
         {
             label: "Education",
             value: "education",
             id: "education",
             content: (
-                <ul>
+                <ul className="list-disc list-inside">
                     <li>ETEC Camargo Aranha, São Paulo</li>
                     <li>Universidade Paulista, São Paulo</li>
                     <li>Rocketseat, Santa Catarina</li>
@@ -38,40 +110,17 @@ export const About = () => {
             value: "certifications",
             id: "certifications",
             content: (
-                <ul>
+                <ul className="list-disc list-inside">
                     <li>Computer technician</li>
                     <li>Analysis and systems development</li>
                     <li>FullStack training</li>
                     <li>Programming with JavaScript</li>
                     <li>JavaScript course</li>
-                    <li>Node.js, React.js and React Native Bootcamp</li>
                     <li>React.js Bootcamp</li>
                     <li>Advanced Next.js Course</li>
                     <li>Gatsby.js and GraphQL Course</li>
                     <li>Scrum Foundations</li>
-                </ul>
-            )
-        },
-        {
-            label: "Skills",
-            value: "skills",
-            id: "skills",
-            content: (
-                <ul>
-                    <li>JavaScript • TypeScript</li>
-                    <li>React.js • Next.js • Gatsby.js</li>
-                    <li>Node.js • Express.js • Nest.js</li>
-                    <li>PostgresSQL • MySQL • MongoDB</li>
-                    <li>Sequelize • TypeORM • Prisma</li>
-                    <li>HTML • CSS • SASS • LESS</li>
-                    <li>Bootstrap • TailwindCSS • Radix UI</li>
-                    <li>Styled-Components</li>
-                    <li>Git • GitHub • GitLab</li>
-                    <li>RestFull • GraphQL</li>
-                    <li>Redux • React Query • Apollo</li>
-                    <li>Unit test • E2E Tests • Integration Tests•</li>
-                    <li>Docker • Kubernetes • Terraform</li>
-                    <li>AWS • GCP • Azure</li>
+                    <li>Node.js, React.js and React Native Bootcamp</li>
                 </ul>
             )
         }
@@ -82,7 +131,7 @@ export const About = () => {
         <section className="text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
                 <Image
-                    className="rounded-xl"
+                    className="rounded-xl hover:shadow-2xl"
                     src="/images/about.jpg"
                     alt="about section"
                     width={700}
@@ -114,7 +163,7 @@ export const About = () => {
                             </TabButton>
                         ))}
                     </div>
-                    <div className="mt-8">
+                    <div className="mt-8 text-sm md:text-base">
                         {
                             tabOptions.find((option) => option.id === tab)
                                 ?.content
