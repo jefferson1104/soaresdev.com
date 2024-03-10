@@ -39,11 +39,14 @@ export const About = () => {
         { name: "Prisma", path: "/images/technologies/prisma.svg" },
 
         { name: "GraphQL", path: "/images/technologies/graphql.svg" },
-        { name: "Swagger", path: "/images/technologies/swagger.svg" },
         { name: "Jest", path: "/images/technologies/jest.svg" },
         { name: "Cypress.js", path: "/images/technologies/cypress.svg" },
-        { name: "Python", path: "/images/technologies/python.svg" },
-        { name: "Markdown", path: "/images/technologies/markdown.svg" },
+        {
+            name: "Testing Library",
+            path: "/images/technologies/testinglibrary.svg"
+        },
+        { name: "Storybook", path: "/images/technologies/storybook.svg" },
+        { name: "Swagger", path: "/images/technologies/swagger.svg" },
 
         { name: "Heroku", path: "/images/technologies/heroku.svg" },
         { name: "Firebase", path: "/images/technologies/firebase.svg" },
@@ -59,6 +62,7 @@ export const About = () => {
         { name: "Vercel", path: "/images/technologies/vercel.svg" },
         { name: "Netlify", path: "/images/technologies/netlify.svg" },
 
+        { name: "Python", path: "/images/technologies/python.svg" },
         { name: "Docker", path: "/images/technologies/docker.svg" },
         { name: "Kubernetes", path: "/images/technologies/kubernetes.svg" },
         { name: "Terraform", path: "/images/technologies/terraform.svg" },

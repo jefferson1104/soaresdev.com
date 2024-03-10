@@ -2,6 +2,7 @@
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { Projects } from "./components/Projects";
 
 // HOME PAGE
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
             <div className="container mt-24 mx-auto py-4 px-12">
                 <Hero />
                 <About />
+                <Projects />
             </div>
         </main>
     );
