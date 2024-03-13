@@ -80,7 +80,7 @@ export const About = () => {
                     {technologies.map((technology, index) => (
                         <div
                             key={index}
-                            className="hover:animate-bounce cursor-pointer"
+                            className="flex items-center justify-center cursor-pointer rounded-xl hover:shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 ease-out"
                         >
                             <Image
                                 alt={technology.name}
@@ -132,11 +132,11 @@ export const About = () => {
 
     /* Renders */
     return (
-        <section className="text-white">
+        <section className="text-white mt-12">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
                 <Image
-                    className="rounded-xl hover:shadow-2xl"
-                    src="/images/about.jpg"
+                    className="hidden  sm:block"
+                    src="/images/jefferson-avatar-computer.svg"
                     alt="about section"
                     width={700}
                     height={700}
@@ -148,15 +148,24 @@ export const About = () => {
                     <p className="text-base lg:text-lg ">
                         I am a full stack web developer with a passion for
                         creating interactive and responsive web applications. I
-                        have experience working with JavaScript, React, Redux,
-                        Node.js, Express, PostgreSQL, MongoDB, Sequelize,
-                        TailwindCSS, Styled-components, HTML, CSS, Git and many
+                        have a degree in Systems Analysis and Development and
+                        have been working in web development since 2014. I have
+                        experience working with JavaScript, React.js, Redux,
+                        Node.js, Express.js, PostgreSQL, MongoDB, Sequelize,
+                        TypeORM, TailwindCSS, styled-components, Git and many
                         others technologies. I am a quick learner and I am
                         always looking to expand my knowledge and skill set. I
                         am a team player and I am excited to work with others to
                         create amazing applications.
                     </p>
-                    <div className="flex flex-row justify-start mt-8">
+                    <Image
+                        className="block sm:hidden mt-8 mb-2 rounded-xl"
+                        src="/images/jefferson-avatar-computer.svg"
+                        alt="about section"
+                        width={700}
+                        height={700}
+                    />
+                    <div className="flex flex-row justify-start mt-4">
                         {tabOptions.map((option, index) => (
                             <TabButton
                                 key={index}
@@ -167,7 +176,7 @@ export const About = () => {
                             </TabButton>
                         ))}
                     </div>
-                    <div className="mt-8 text-sm md:text-base">
+                    <div className="mt-4 text-sm md:text-base">
                         {
                             tabOptions.find((option) => option.id === tab)
                                 ?.content

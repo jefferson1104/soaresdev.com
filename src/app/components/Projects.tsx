@@ -55,14 +55,24 @@ export const Projects = () => {
         },
         {
             id: 5,
-            title: "LetMeAsk",
-            image: "/images/projects/letmeask.png",
+            title: "Personal Notes",
+            image: "/images/projects/personal-notes.png",
             tag: ["All", "Web"],
-            github: "https://github.com/jefferson1104/letmeask-reactjs",
-            preview: "https://letmeask-reactjs.vercel.app",
+            github: "https://github.com/jefferson1104/personal-notes",
+            preview: "https://the-personal-notes.netlify.app",
             description:
-                "An online platform for you to better organize questions and answers in a live."
+                "A tool for creating personal notes via typing or speech transcription, utilizing browser resources like the Speech Recognition API. Built with Vite, ReactJS, Tailwind CSS, and TypeScript for efficient organization of ideas."
         },
+        // {
+        //     id: 5,
+        //     title: "LetMeAsk",
+        //     image: "/images/projects/letmeask.png",
+        //     tag: ["All", "Web"],
+        //     github: "https://github.com/jefferson1104/letmeask-reactjs",
+        //     preview: "https://letmeask-reactjs.vercel.app",
+        //     description:
+        //         "An online platform for you to better organize questions and answers in a live."
+        // },
         {
             id: 6,
             title: "EsportsDuo",
@@ -98,8 +108,8 @@ export const Projects = () => {
 
     /* Renders */
     return (
-        <div>
-            <h2 className="text-left md:text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+        <section>
+            <h2 className="text-left md:text-center text-4xl font-bold text-white mt-12 mb-8 md:mb-12">
                 My Projects
             </h2>
             <div className="flex flex-row justify-start md:justify-center mt-8 mb-8">
@@ -125,6 +135,6 @@ export const Projects = () => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };

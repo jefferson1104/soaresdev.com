@@ -16,7 +16,7 @@ export const TabButton = ({ active, selectTab, children }: ITabButton) => {
     return (
         <button onClick={selectTab}>
             <p
-                className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}
+                className={`mr-3 font-semibold hover:text-white transition-text duration-200 ease-out ${buttonClasses}`}
             >
                 {children}
             </p>

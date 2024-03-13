@@ -32,10 +32,10 @@ export const ProjectCard = ({
                     backgroundPosition: "center"
                 }}
             >
-                <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+                <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80">
                     {githubUrl && (
                         <Link
-                            className="h-14 w-14 border-4 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+                            className="h-14 w-14 border-4 relative rounded-full border-[#ADB7BE] hover:border-white group/link transition-all duration-300 ease-out"
                             href={githubUrl}
                             target="_blank"
                         >
@@ -45,7 +45,7 @@ export const ProjectCard = ({
 
                     {previewUrl && (
                         <Link
-                            className="h-14 w-14 ml-4 border-4 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+                            className="h-14 w-14 ml-4 border-4 relative rounded-full border-[#ADB7BE] hover:border-white group/link transition-all duration-300 ease-out"
                             href={previewUrl}
                             target="_blank"
                         >
