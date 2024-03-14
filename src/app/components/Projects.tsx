@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 // COMPONENTS
 import { ProjectCard } from "./ProjectCard";
@@ -10,12 +11,21 @@ export const Projects = () => {
     /* States */
     const [tab, setTab] = useState("All");
 
+    /* Hooks */
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     /* Handlers */
     const tabChangeHandler = (id: string) => {
         setTab(id);
     };
 
     /* Utils */
+    const cardVariants = {
+        initial: { y: 50, opacity: 0 },
+        animate: { y: 0, opacity: 1 }
+    };
+
     const projectsData = [
         {
             id: 1,
@@ -108,7 +118,7 @@ export const Projects = () => {
 
     /* Renders */
     return (
-        <section>
+        <section id="projects" ref={ref}>
             <h2 className="text-left md:text-center text-4xl font-bold text-white mt-12 mb-8 md:mb-12">
                 My Projects
             </h2>
@@ -123,18 +133,26 @@ export const Projects = () => {
                     </TabButton>
                 ))}
             </div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-                {filteredProjects.map((project) => (
-                    <ProjectCard
-                        key={project.id}
-                        title={project.title}
-                        description={project.description}
-                        imgUrl={project.image}
-                        githubUrl={project.github}
-                        previewUrl={project.preview}
-                    />
+            <ul className="grid md:grid-cols-3 gap-8 md:gap-12" ref={ref}>
+                {filteredProjects.map((project, index) => (
+                    <motion.li
+                        key={index}
+                        variants={cardVariants}
+                        initial="initial"
+                        animate={isInView ? "animate" : "initial"}
+                        transition={{ duration: 0.3, delay: index * 0.4 }}
+                    >
+                        <ProjectCard
+                            key={project.id}
+                            title={project.title}
+                            description={project.description}
+                            imgUrl={project.image}
+                            githubUrl={project.github}
+                            previewUrl={project.preview}
+                        />
+                    </motion.li>
                 ))}
-            </div>
+            </ul>
         </section>
     );
 };

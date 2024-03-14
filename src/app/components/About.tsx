@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // COMPONENTS
 import { TabButton } from "./TabButton";
@@ -132,8 +133,13 @@ export const About = () => {
 
     /* Renders */
     return (
-        <section className="text-white mt-12">
-            <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <section className="text-white mt-12" id="about">
+            <motion.div
+                className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+            >
                 <Image
                     className="hidden rounded-xl sm:block"
                     src="/images/jefferson-avatar-computer.svg"
@@ -183,7 +189,7 @@ export const About = () => {
                         }
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };

@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
-
 import { Bounce, toast } from "react-toastify";
 
 // COMPONENTS
@@ -140,7 +139,10 @@ export const Contacts = () => {
 
     /* Renders */
     return (
-        <section className="grid md:grid-cols-2 mt-12 my-4 md:my-12 md:py-24 gap-4 relative z-0">
+        <section
+            className="grid md:grid-cols-2 mt-12 my-4 md:my-12 md:py-24 gap-4 relative z-0"
+            id="contact"
+        >
             <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#16393e] to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
             <div className="z-10">
                 <h5 className="text-left text-4xl font-bold text-white mt-4 mb-4">

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 // TAB BUTTON COMPONENT UTILS
 interface ITabButton {
     active: boolean;
@@ -7,10 +9,13 @@ interface ITabButton {
 
 // TAB BUTTON COMPONENT
 export const TabButton = ({ active, selectTab, children }: ITabButton) => {
-    /* Vars */
-    const buttonClasses = active
-        ? "text-white border-b-4 border-[#4bbcce]"
-        : "text-[#ADB7BE]";
+    /* Utils */
+    const buttonClasses = active ? "text-white " : "text-[#ADB7BE]";
+
+    const variants = {
+        default: { width: 0 },
+        active: { width: "calc(100% - 0.75rem)" }
+    };
 
     /* Renders */
     return (
@@ -20,6 +25,11 @@ export const TabButton = ({ active, selectTab, children }: ITabButton) => {
             >
                 {children}
             </p>
+            <motion.div
+                animate={active ? "active" : "default"}
+                variants={variants}
+                className="h-1 bg-[#4bbcce] mt-1 mr-3"
+            ></motion.div>
         </button>
     );
 };
