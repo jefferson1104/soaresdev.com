@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     publisher: "SoaresDev",
     robots: { index: true, follow: true },
     icons: ["/images/icon-192.png", "/images/icon-512.png"],
+    verification: {
+        google: "G-FJNEZYYREQ"
+    },
     description:
         "I am software engineer, almost 10 years of experience specializing in front-end, back-end, and mobile development, expertise with tecnologies such as JavaScript, TypeScript, React.js, React Native, Node.js, Redux, Unit tests, E2E tests, AWS, SQL and No-SQL and many others.",
     alternates: {
