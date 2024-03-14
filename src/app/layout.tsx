@@ -18,9 +18,14 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth">
             <head>
+                <title>SoaresDev</title>
+                <meta name="theme-color" content="#1d1b27" />
+                <link rel="shortcut icon" href="/img/icon-512.png" />
+                <link rel="apple-touch-icon" href="/img/icon-512.png" />
+                <link rel="manifest" href="/manifest.json" />
                 <link
                     rel="icon"
-                    href="/images/icon.png"
+                    href="/images/icon-192.png"
                     type="image/png"
                     sizes="32x32"
                 />
