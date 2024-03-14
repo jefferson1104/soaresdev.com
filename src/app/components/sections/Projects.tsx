@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 // COMPONENTS
-import { ProjectCard } from "../ProjectCard";
+import { Card } from "../Card";
 import { TabButton } from "../TabButton";
 
 // PROJECTS COMPONENT
@@ -142,7 +142,7 @@ export const Projects = () => {
                         animate={isInView ? "animate" : "initial"}
                         transition={{ duration: 0.3, delay: index * 0.4 }}
                     >
-                        <ProjectCard
+                        <Card
                             key={project.id}
                             title={project.title}
                             description={project.description}

@@ -4,8 +4,8 @@ import Link from "next/link";
 // UTILS
 import { textLimited } from "../utils/string";
 
-// PROJECT CARD UTILS
-interface IProjectCard {
+//  CARD UTILS
+interface ICard {
     imgUrl: string;
     title: string;
     description: string;
@@ -13,14 +13,14 @@ interface IProjectCard {
     previewUrl?: string;
 }
 
-// PROJECT CARD COMPONENT
-export const ProjectCard = ({
+//  CARD COMPONENT
+export const Card = ({
     imgUrl,
     title,
     description,
     githubUrl,
     previewUrl
-}: IProjectCard) => {
+}: ICard) => {
     /* Renders */
     return (
         <div>

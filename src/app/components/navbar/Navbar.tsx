@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 // COMPONENTS
 import { NavLink } from "./NavLink";
 import { MenuOverlay } from "./MenuOverlay";
-import { Logo } from "./Logo";
+import { Logo } from "../Logo";
 
 // NAVBAR COMPONENT
 export const Navbar = () => {

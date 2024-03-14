@@ -2,7 +2,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // COMPONENTS
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/navbar/Navbar";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
