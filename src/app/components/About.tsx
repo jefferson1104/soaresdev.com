@@ -135,7 +135,7 @@ export const About = () => {
         <section className="text-white mt-12">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
                 <Image
-                    className="hidden  sm:block"
+                    className="hidden rounded-xl sm:block"
                     src="/images/jefferson-avatar-computer.svg"
                     alt="about section"
                     width={700}

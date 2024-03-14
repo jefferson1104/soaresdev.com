@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 // COMPONENTS
 import { NavLink } from "./NavLink";
 import { MenuOverlay } from "./MenuOverlay";
+import { Logo } from "./Logo";
 
 // NAVBAR COMPONENT
 export const Navbar = () => {
@@ -22,20 +21,9 @@ export const Navbar = () => {
 
     /* Renders */
     return (
-        <nav className="fixed mx-auto border-b-1 border-[#33353F] border-b top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
+        <nav className="fixed mx-auto border-b-1 border-[#33353F] border-b top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95">
             <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-                <Link
-                    className="text-2xl md:text-5xl text-white font-semibold"
-                    href={"/"}
-                >
-                    <Image
-                        src="/images/logo.svg"
-                        alt="Soares Dev"
-                        width={150}
-                        height={50}
-                    />
-                </Link>
-
+                <Logo />
                 <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (
                         <button
