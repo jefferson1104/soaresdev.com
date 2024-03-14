@@ -17,6 +17,7 @@ import {
     IContactForm,
     IFieldError
 } from "../../utils/contact-form";
+import { Textarea } from "../Textarea";
 
 // CONTACTS COMPONENT
 export const Contacts = () => {
@@ -156,6 +157,7 @@ export const Contacts = () => {
         >
             <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#16393e] to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
 
+            {/* Social Media */}
             <motion.div
                 className="z-10"
                 variants={motionVariants}
@@ -186,6 +188,7 @@ export const Contacts = () => {
                 </div>
             </motion.div>
 
+            {/* Contact Form */}
             <motion.div
                 variants={motionVariants}
                 initial="initial"
@@ -210,11 +213,11 @@ export const Contacts = () => {
                     />
 
                     <Input
-                        placeholder="Just saying hi"
                         id="subject"
-                        name="subject"
-                        type="text"
                         label="Subject"
+                        name="subject"
+                        placeholder="Just saying hi"
+                        type="text"
                         value={formValues.subject}
                         errorMessage={fieldError?.subject}
                         onChange={(e) =>
@@ -222,33 +225,21 @@ export const Contacts = () => {
                         }
                     />
 
-                    <div className="mb-6">
-                        <label
-                            className="text-white block mb-2 text-sm font-medium"
-                            htmlFor="message"
-                        >
-                            Message
-                        </label>
-                        <textarea
-                            className={`bg-[#18191E]  placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none hover:ring-2  focus-visible:ring-2 h-24 resize-none overflow-auto border ${fieldError?.message ? "border-red-700 hover:ring-red-600 focus-visible:ring-red-600" : "border-[#33353F] hover:ring-slate-600 focus-visible:ring-[#4bbcce]"}`}
-                            id="message"
-                            name="message"
-                            placeholder="Let's talk about..."
-                            value={formValues.message}
-                            onChange={(e) =>
-                                inputChangeHandler("message", e.target.value)
-                            }
-                        />
-                        {fieldError?.message && (
-                            <p className="mt-1 text-sm text-red-700 font-medium">
-                                {fieldError?.message}
-                            </p>
-                        )}
-                    </div>
+                    <Textarea
+                        id="message"
+                        label="Message"
+                        name="message"
+                        placeholder="Let's talk about..."
+                        value={formValues.message}
+                        errorMessage={fieldError?.message}
+                        onChange={(e) =>
+                            inputChangeHandler("message", e.target.value)
+                        }
+                    />
 
                     <button
+                        className={`flex items-center justify-center gap-2 py-2.5 px-5 mt-4 w-full font-medium rounded-lg text-white bg-[#4bbcce] hover:bg-[#2d727c] transition-all duration-300 ease-out ${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
                         type="submit"
-                        className={`${isLoading ? "cursor-not-allowed" : "cursor-pointer"} flex items-center justify-center gap-2 bg-[#4bbcce] hover:bg-[#2d727c] transition-all duration-300 ease-out text-white font-medium py-2.5 px-5 rounded-lg w-full`}
                     >
                         {isLoading && <Loader2 className="animate-spin" />}
                         {!isLoading ? "Send Message" : "Processing..."}

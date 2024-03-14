@@ -1,15 +1,22 @@
-import { InputHTMLAttributes } from "react";
+"use client";
+import { TextareaHTMLAttributes } from "react";
 
-// INPUT COMPONENT INTERFACES
-interface IInput extends InputHTMLAttributes<HTMLInputElement> {
+// TEXTAREA COMPONENT INTERFACES
+interface ITextarea extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     id?: string;
     label?: string;
     name?: string;
     errorMessage?: string;
 }
 
-// INPUT COMPONENT
-export const Input = ({ id, label, name, errorMessage, ...props }: IInput) => {
+// TEXTAREA COMPONENT
+export const Textarea = ({
+    id,
+    label,
+    name,
+    errorMessage,
+    ...props
+}: ITextarea) => {
     /* Vars */
     const borderStyles = !!errorMessage
         ? "border-red-700 hover:ring-red-600 focus-visible:ring-red-600"
@@ -26,7 +33,7 @@ export const Input = ({ id, label, name, errorMessage, ...props }: IInput) => {
                     {label}
                 </label>
             )}
-            <input
+            <textarea
                 className={`bg-[#18191E] placeholder-[#9CA2A9] border ${borderStyles} text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none overflow-hidden hover:ring-2 focus-visible:ring-2`}
                 id={id}
                 name={name}
