@@ -14,9 +14,10 @@ export const Navbar = () => {
 
     /* Utils */
     const links = [
-        { title: "About", href: "#about" },
-        { title: "Contact", href: "#contact" },
-        { title: "Projects", href: "#projects" }
+        { title: "About", href: "#about", isExternal: false },
+        { title: "Projects", href: "#projects", isExternal: false },
+        { title: "Contact", href: "#contact", isExternal: false },
+        { title: "Blog", href: "https://blog.soaresdev.com", isExternal: true }
     ];
 
     /* Renders */
@@ -24,6 +25,7 @@ export const Navbar = () => {
         <nav className="fixed mx-auto border-b-1 border-[#33353F] border-b top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95">
             <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
                 <Logo />
+
                 <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (
                         <button
@@ -46,14 +48,23 @@ export const Navbar = () => {
                     <ul className="flex mt-0 p-4 md:p-0 md:flex-row md:space-x-8">
                         {links.map((link, index) => (
                             <li key={index}>
-                                <NavLink title={link.title} href={link.href} />
+                                <NavLink
+                                    title={link.title}
+                                    href={link.href}
+                                    external={link.isExternal}
+                                />
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
 
-            {navbarOpen ? <MenuOverlay links={links} /> : null}
+            {navbarOpen ? (
+                <MenuOverlay
+                    links={links}
+                    onClick={() => setNavbarOpen(false)}
+                />
+            ) : null}
         </nav>
     );
 };

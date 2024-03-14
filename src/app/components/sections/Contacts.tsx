@@ -1,13 +1,14 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { Bounce, toast } from "react-toastify";
+import { motion, useInView } from "framer-motion";
 
 // COMPONENTS
-import { Input } from "./Input";
+import { Input } from "../Input";
 
 // UTILS
 import {
@@ -15,7 +16,7 @@ import {
     Validations,
     IContactForm,
     IFieldError
-} from "../utils/contact-form";
+} from "../../utils/contact-form";
 
 // CONTACTS COMPONENT
 export const Contacts = () => {
@@ -23,6 +24,10 @@ export const Contacts = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [fieldError, setFieldError] = useState<IFieldError>({});
     const [formValues, setFormValues] = useState<IContactForm>(initialValues);
+
+    /* Hooks */
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
     /* Handlers */
     const inputChangeHandler = async (field: string, value: string) => {
@@ -137,14 +142,27 @@ export const Contacts = () => {
         });
     };
 
+    const motionVariants = {
+        initial: { y: 50, opacity: 0 },
+        animate: { y: 0, opacity: 1 }
+    };
+
     /* Renders */
     return (
         <section
             className="grid md:grid-cols-2 mt-12 my-4 md:my-12 md:py-24 gap-4 relative z-0"
             id="contact"
+            ref={ref}
         >
             <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#16393e] to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-            <div className="z-10">
+
+            <motion.div
+                className="z-10"
+                variants={motionVariants}
+                initial="initial"
+                animate={isInView ? "animate" : "initial"}
+                transition={{ duration: 1, delay: 0.5 }}
+            >
                 <h5 className="text-left text-4xl font-bold text-white mt-4 mb-4">
                     Let'ts Connect
                 </h5>
@@ -166,69 +184,77 @@ export const Contacts = () => {
                         </Link>
                     ))}
                 </div>
-            </div>
-            <form
-                className="flex flex-col gap-6 mt-4 z-10"
-                onSubmit={submitHandler}
+            </motion.div>
+
+            <motion.div
+                variants={motionVariants}
+                initial="initial"
+                animate={isInView ? "animate" : "initial"}
+                transition={{ duration: 0.5, delay: 0.3 }}
             >
-                <Input
-                    placeholder="email@example.com"
-                    id="email"
-                    name="email"
-                    type="email"
-                    label="Your email"
-                    value={formValues.email}
-                    errorMessage={fieldError?.email}
-                    onChange={(e) =>
-                        inputChangeHandler("email", e.target.value)
-                    }
-                />
-
-                <Input
-                    placeholder="Just saying hi"
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    label="Subject"
-                    value={formValues.subject}
-                    errorMessage={fieldError?.subject}
-                    onChange={(e) =>
-                        inputChangeHandler("subject", e.target.value)
-                    }
-                />
-
-                <div className="mb-6">
-                    <label
-                        className="text-white block mb-2 text-sm font-medium"
-                        htmlFor="message"
-                    >
-                        Message
-                    </label>
-                    <textarea
-                        className={`bg-[#18191E]  placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none hover:ring-2  focus-visible:ring-2 h-24 resize-none overflow-auto border ${fieldError?.message ? "border-red-700 hover:ring-red-600 focus-visible:ring-red-600" : "border-[#33353F] hover:ring-slate-600 focus-visible:ring-[#4bbcce]"}`}
-                        id="message"
-                        name="message"
-                        placeholder="Let's talk about..."
-                        value={formValues.message}
+                <form
+                    className="flex flex-col gap-6 mt-4 z-10"
+                    onSubmit={submitHandler}
+                >
+                    <Input
+                        placeholder="email@example.com"
+                        id="email"
+                        name="email"
+                        type="email"
+                        label="Your email"
+                        value={formValues.email}
+                        errorMessage={fieldError?.email}
                         onChange={(e) =>
-                            inputChangeHandler("message", e.target.value)
+                            inputChangeHandler("email", e.target.value)
                         }
                     />
-                    {fieldError?.message && (
-                        <p className="mt-1 text-sm text-red-700 font-medium">
-                            {fieldError?.message}
-                        </p>
-                    )}
-                </div>
 
-                <button
-                    type="submit"
-                    className={`${isLoading ? "cursor-not-allowed" : "cursor-pointer"} flex items-center justify-center gap-2 bg-[#4bbcce] hover:bg-[#2d727c] transition-all duration-300 ease-out text-white font-medium py-2.5 px-5 rounded-lg w-full`}
-                >
-                    {isLoading && <Loader2 className="animate-spin" />}
-                    {!isLoading ? "Send Message" : "Processing..."}
-                </button>
-            </form>
+                    <Input
+                        placeholder="Just saying hi"
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        label="Subject"
+                        value={formValues.subject}
+                        errorMessage={fieldError?.subject}
+                        onChange={(e) =>
+                            inputChangeHandler("subject", e.target.value)
+                        }
+                    />
+
+                    <div className="mb-6">
+                        <label
+                            className="text-white block mb-2 text-sm font-medium"
+                            htmlFor="message"
+                        >
+                            Message
+                        </label>
+                        <textarea
+                            className={`bg-[#18191E]  placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none hover:ring-2  focus-visible:ring-2 h-24 resize-none overflow-auto border ${fieldError?.message ? "border-red-700 hover:ring-red-600 focus-visible:ring-red-600" : "border-[#33353F] hover:ring-slate-600 focus-visible:ring-[#4bbcce]"}`}
+                            id="message"
+                            name="message"
+                            placeholder="Let's talk about..."
+                            value={formValues.message}
+                            onChange={(e) =>
+                                inputChangeHandler("message", e.target.value)
+                            }
+                        />
+                        {fieldError?.message && (
+                            <p className="mt-1 text-sm text-red-700 font-medium">
+                                {fieldError?.message}
+                            </p>
+                        )}
+                    </div>
+
+                    <button
+                        type="submit"
+                        className={`${isLoading ? "cursor-not-allowed" : "cursor-pointer"} flex items-center justify-center gap-2 bg-[#4bbcce] hover:bg-[#2d727c] transition-all duration-300 ease-out text-white font-medium py-2.5 px-5 rounded-lg w-full`}
+                    >
+                        {isLoading && <Loader2 className="animate-spin" />}
+                        {!isLoading ? "Send Message" : "Processing..."}
+                    </button>
+                </form>
+            </motion.div>
         </section>
     );
 };

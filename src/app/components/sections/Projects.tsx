@@ -3,8 +3,8 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 // COMPONENTS
-import { ProjectCard } from "./ProjectCard";
-import { TabButton } from "./TabButton";
+import { ProjectCard } from "../ProjectCard";
+import { TabButton } from "../TabButton";
 
 // PROJECTS COMPONENT
 export const Projects = () => {
@@ -118,7 +118,7 @@ export const Projects = () => {
 
     /* Renders */
     return (
-        <section id="projects" ref={ref}>
+        <section className="py-20 md:py-12 " id="projects" ref={ref}>
             <h2 className="text-left md:text-center text-4xl font-bold text-white mt-12 mb-8 md:mb-12">
                 My Projects
             </h2>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // COMPONENTS
-import { TabButton } from "./TabButton";
+import { TabButton } from "../TabButton";
 
 // ABOUT COMPONENT
 export const About = () => {
@@ -133,7 +133,7 @@ export const About = () => {
 
     /* Renders */
     return (
-        <section className="text-white mt-12" id="about">
+        <section className="text-white mt-12 py-8 md:py-12" id="about">
             <motion.div
                 className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
                 initial={{ opacity: 0, scale: 0.5 }}
