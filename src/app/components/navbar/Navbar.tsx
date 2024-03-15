@@ -22,7 +22,7 @@ export const Navbar = () => {
 
     /* Renders */
     return (
-        <nav className="fixed mx-auto border-b-1 border-[#33353F] border-b top-0 left-0 right-0 z-10 bg-[#1d1b27] bg-opacity-95">
+        <nav className="fixed mx-auto border-b-1 border-[#33353F] border-b top-0 left-0 right-0 z-30 bg-[#1d1b27] bg-opacity-95">
             <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
                 <Logo />
 

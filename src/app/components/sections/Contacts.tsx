@@ -151,7 +151,7 @@ export const Contacts = () => {
     /* Renders */
     return (
         <section
-            className="grid md:grid-cols-2 mt-12 my-4 md:my-12 md:py-24 gap-4 relative z-0"
+            className="grid md:grid-cols-2 mt-12 my-4 md:my-12 md:py-24 gap-4 relative"
             id="contact"
             ref={ref}
         >
@@ -190,6 +190,7 @@ export const Contacts = () => {
 
             {/* Contact Form */}
             <motion.div
+                className="z-10"
                 variants={motionVariants}
                 initial="initial"
                 animate={isInView ? "animate" : "initial"}
