@@ -152,13 +152,13 @@ export const About = () => {
                         About Me
                     </h2>
                     <p className="text-base lg:text-lg ">
-                        I am a full stack web developer with a passion for
+                        I am a full-stack web developer with a passion for
                         creating interactive and responsive web applications. I
                         have a degree in Systems Analysis and Development and
                         have been working in web development since 2014. I have
                         experience working with JavaScript, React.js, Redux,
                         Node.js, Express.js, PostgreSQL, MongoDB, Sequelize,
-                        TypeORM, TailwindCSS, styled-components, Git and many
+                        TypeORM, TailwindCSS, styled-components, Git, and many
                         others technologies. I am a quick learner and I am
                         always looking to expand my knowledge and skill set. I
                         am a team player and I am excited to work with others to

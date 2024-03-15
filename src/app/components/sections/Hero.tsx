@@ -3,9 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 // HERO COMPONENT
 export const Hero = () => {
+    /* Hooks */
+    const router = useRouter();
+
+    /* Handlers */
+    const downloadCVHandler = () => {
+        const file = "/documents/JEFFERSON_SOARES_RESUME_EN.pdf";
+        router.push(file);
+    };
+
     /* Renders */
     return (
         <section className="lg:py-16" id="hero">
@@ -38,10 +48,12 @@ export const Hero = () => {
                         />
                     </h1>
                     <p className="mb-6 text-sm sm:text-lg lg:text-xl text-[#ADB7BE]">
-                        I have expertise in the JavaScript programming language
-                        and work with technologies such as React.js, Node.js,
-                        React Native, TypeScript, SQL, No-SQL, Unit tests, E2E
-                        tests and many others.
+                        I'm a full-stack developer, degraded in Systems Analysis
+                        and Development at the Universidade Paulista (UNIP) in
+                        Brazil. I have expertise in JavaScript and work with
+                        technologies such as React.js, Node.js, React Native,
+                        TypeScript, SQL, No-SQL, Unit tests, E2E tests, and many
+                        others.
                     </p>
                     <div>
                         <Link
@@ -50,7 +62,10 @@ export const Hero = () => {
                         >
                             Hire Me
                         </Link>
-                        <button className="px-1 py-1 mt-3 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#93d8e2] via-[#4bbcce] to-[#16393e] hover:bg-slate-800 text-white">
+                        <button
+                            className="px-1 py-1 mt-3 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#93d8e2] via-[#4bbcce] to-[#16393e] hover:bg-slate-800 text-white"
+                            onClick={downloadCVHandler}
+                        >
                             <span className="block bg-[#181818] hover:bg-slate-800 rounded-full px-5 py-2 transition-all duration-300 ease-out">
                                 Download CV
                             </span>
