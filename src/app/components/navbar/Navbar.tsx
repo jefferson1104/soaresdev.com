@@ -14,10 +14,10 @@ export const Navbar = () => {
 
     /* Utils */
     const links = [
-        { title: "About", href: "#about", isExternal: false },
-        { title: "Projects", href: "#projects", isExternal: false },
-        { title: "Contact", href: "#contact", isExternal: false },
-        { title: "Blog", href: "https://blog.soaresdev.com", isExternal: true }
+        { title: "About", href: "#about", external: false },
+        { title: "Projects", href: "#projects", external: false },
+        { title: "Contact", href: "#contact", external: false },
+        { title: "Blog", href: "https://blog.soaresdev.com", external: true }
     ];
 
     /* Renders */
@@ -51,7 +51,7 @@ export const Navbar = () => {
                                 <NavLink
                                     title={link.title}
                                     href={link.href}
-                                    external={link.isExternal}
+                                    external={link.external}
                                 />
                             </li>
                         ))}
@@ -59,12 +59,7 @@ export const Navbar = () => {
                 </div>
             </div>
 
-            {navbarOpen ? (
-                <MenuOverlay
-                    links={links}
-                    onClick={() => setNavbarOpen(false)}
-                />
-            ) : null}
+            {navbarOpen ? <MenuOverlay links={links} /> : null}
         </nav>
     );
 };
