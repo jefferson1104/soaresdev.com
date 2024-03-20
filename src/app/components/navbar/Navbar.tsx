@@ -14,9 +14,9 @@ export const Navbar = () => {
 
     /* Utils */
     const links = [
-        { title: "About", href: "#about", external: false },
-        { title: "Projects", href: "#projects", external: false },
-        { title: "Contact", href: "#contact", external: false },
+        { title: "About", href: "/#about", external: false },
+        { title: "Projects", href: "/#projects", external: false },
+        { title: "Contact", href: "/#contact", external: false },
         { title: "Blog", href: "https://blog.soaresdev.com", external: true }
     ];
 
