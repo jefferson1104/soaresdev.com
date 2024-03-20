@@ -1,5 +1,5 @@
 // COMPONENTS
-import { NavLink, INavLink } from "./NavLink";
+import { INavLink } from "./NavLink";
 
 // MENU OVERLAY UTILS
 interface IMenuOverlay {
@@ -13,11 +13,12 @@ export const MenuOverlay = ({ links }: IMenuOverlay) => {
         <ul className="flex flex-col py-4 items-center">
             {links.map((link, index) => (
                 <li key={index}>
-                    <NavLink
-                        title={link.title}
+                    <a
                         href={link.href}
-                        external={link.external}
-                    />
+                        target={link.external ? "_blank" : "_self"}
+                    >
+                        {link.title}
+                    </a>
                 </li>
             ))}
         </ul>
