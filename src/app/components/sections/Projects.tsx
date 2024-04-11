@@ -52,7 +52,7 @@ export const Projects = () => {
             tag: ["All", "Web", "Mobile"],
             github: "https://github.com/jefferson1104/Proffy",
             description:
-                "It's a platform where you can study or teach. A teacher putting his data, the subject he wants to teach, and choosing the best time to teach his class."
+                "Proffy is an innovative platform connecting students with teachers, allowing educators to promote their specialties and lesson availability. It's the ideal place for students looking for tailored tutoring, helping them find the perfect match for their educational needs."
         },
         {
             id: 4,

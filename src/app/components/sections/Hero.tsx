@@ -35,9 +35,9 @@ export const Hero = () => {
                             sequence={[
                                 "Jefferson Soares",
                                 1000,
-                                "Front-end Developer",
+                                "Front-End Developer",
                                 1000,
-                                "Back-end Developer",
+                                "Back-End Developer",
                                 1000,
                                 "Mobile Developer",
                                 1000

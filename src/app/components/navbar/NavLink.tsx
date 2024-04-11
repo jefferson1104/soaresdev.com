@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 // NAV LINK UTILS
 export interface INavLink {
     href: string;
@@ -11,12 +9,12 @@ export interface INavLink {
 export const NavLink = ({ href, title, external }: INavLink) => {
     /* Renders */
     return (
-        <Link
+        <a
             className="block py-2 pl-3 pr-4 md:p-0 sm:text-xl text-[#ADB7BE] rounded hover:text-white"
             href={href}
             target={external ? "_blank" : "_self"}
         >
             {title}
-        </Link>
+        </a>
     );
 };
