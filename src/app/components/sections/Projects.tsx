@@ -28,22 +28,32 @@ export const Projects = () => {
 
     const projectsData = [
         {
-            id: 1,
-            title: "GoBarber",
-            image: "/images/projects/gobarber.png",
-            tag: ["All", "Web", "Mobile"],
-            github: "https://github.com/jefferson1104/goBarber",
+            id: 0,
+            title: "MyLinkIn",
+            image: "/images/projects/mylinkin.png",
+            tag: ["All", "Web"],
+            github: "https://github.com/jefferson1104/mylinkin",
+            preview: "https://mylinkin.com",
             description:
-                "GoBarber is an app for scheduling appointments with your barber. You can create barber profiles on the web, and users utilize the mobile application to register and schedule appointments with their chosen barbers"
+                "MyLinkIn is a free tool to shorten URLs and generate short links. Allows you to create a shortened link making it easy to share and tracking the number of clicks received."
         },
         {
-            id: 2,
+            id: 1,
             title: "WonGames",
             image: "/images/projects/wongames.png",
             tag: ["All", "Web"],
             github: "https://github.com/jefferson1104/wongames",
             description:
                 "WonGames is an e-commerce platform designed for purchasing your favorite video games for both consoles and PCs."
+        },
+        {
+            id: 2,
+            title: "GoBarber",
+            image: "/images/projects/gobarber.png",
+            tag: ["All", "Web", "Mobile"],
+            github: "https://github.com/jefferson1104/goBarber",
+            description:
+                "GoBarber is an app for scheduling appointments with your barber. You can create barber profiles on the web, and users utilize the mobile application to register and schedule appointments with their chosen barbers"
         },
         {
             id: 3,
