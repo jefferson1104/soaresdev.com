@@ -77,17 +77,18 @@ export const About = () => {
             value: "skills",
             id: "skills",
             content: (
-                <div className="grid grid-cols-6 lg:grid-cols-12 gap-4">
+                // <div className="p-0 grid grid-cols-6 lg:grid-cols-12 gap-2">
+                <div className="p-0 m-0 grid grid-cols-12 gap-2">
                     {technologies.map((technology, index) => (
                         <div
                             key={index}
-                            className="flex items-center justify-center cursor-pointer rounded-xl hover:shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 ease-out"
+                            className="flex items-center justify-start"
                         >
                             <Image
                                 alt={technology.name}
                                 src={technology.path}
-                                width={35}
-                                height={35}
+                                width={20}
+                                height={20}
                             />
                         </div>
                     ))}
@@ -100,33 +101,27 @@ export const About = () => {
             id: "education",
             content: (
                 <ul className="list-disc list-inside">
-                    <li>ETEC Camargo Aranha, São Paulo</li>
-                    <li>Universidade Paulista, São Paulo</li>
-                    <li>Rocketseat, Santa Catarina</li>
                     <li>
-                        Instituto de gestão e tecnologia da informação, Belo
-                        Horizonte
+                        Analysis and systems development, Universidade Paulista
                     </li>
+                    <li>Computer technician, ETEC Camargo Aranha</li>
                 </ul>
             )
         },
         {
-            label: "Certifications",
+            label: "Certifications/Courses",
             value: "certifications",
             id: "certifications",
             content: (
-                <ul className="list-disc list-inside">
-                    <li>Computer technician</li>
-                    <li>Analysis and systems development</li>
-                    <li>FullStack training</li>
-                    <li>Programming with JavaScript</li>
-                    <li>JavaScript course</li>
-                    <li>React.js Bootcamp</li>
-                    <li>Advanced Next.js Course</li>
-                    <li>Gatsby.js and GraphQL Course</li>
-                    <li>Scrum Foundations</li>
-                    <li>Node.js, React.js and React Native Bootcamp</li>
-                </ul>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                    <li>JavaScript course, EW.it</li>
+                    <li>Ignite React.js Bootcamp, Rocketseat</li>
+                    <li>Programming with JavaScript, Meta</li>
+                    <li>Ignite Node.js Bootcamp, Meta</li>
+                    <li>Advanced Next.js Course, Udemy</li>
+                    <li>GoStack Bootcamp, Rocketseat</li>
+                    <li>PWA, Gatsby.js, GraphQL Course, Udemy</li>
+                </div>
             )
         }
     ];
@@ -135,58 +130,78 @@ export const About = () => {
     return (
         <section className="text-white mt-12 py-8 md:py-12" id="about">
             <motion.div
-                className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+                className="gap-8 items-center py-8 xl:gap-16 sm:py-16 "
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <Image
-                    className="hidden rounded-xl sm:block"
-                    src="/images/jefferson-avatar-computer.svg"
-                    alt="about section"
-                    width={700}
-                    height={700}
-                />
-                <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">
-                        About Me
-                    </h2>
-                    <p className="text-base lg:text-lg ">
-                        I am a full-stack web developer with a passion for
-                        creating interactive and responsive web applications. I
-                        have a degree in Systems Analysis and Development and
-                        have been working in web development since 2014. I have
-                        experience working with JavaScript, React.js, Redux,
-                        Node.js, Express.js, PostgreSQL, MongoDB, Sequelize,
-                        TypeORM, TailwindCSS, styled-components, Git, and many
-                        others technologies. I am a quick learner and I am
-                        always looking to expand my knowledge and skill set. I
-                        am a team player and I am excited to work with others to
-                        create amazing applications.
-                    </p>
+                <div className="flex gap-8">
                     <Image
-                        className="block sm:hidden mt-8 mb-2 rounded-xl"
+                        className="hidden rounded-xl sm:block"
                         src="/images/jefferson-avatar-computer.svg"
                         alt="about section"
                         width={700}
                         height={700}
                     />
-                    <div className="flex flex-row justify-start mt-4">
-                        {tabOptions.map((option, index) => (
-                            <TabButton
-                                key={index}
-                                selectTab={() => tabChangeHandler(option.value)}
-                                active={tab === option.value}
-                            >
-                                {option.label}
-                            </TabButton>
-                        ))}
-                    </div>
-                    <div className="mt-4 text-sm md:text-base">
-                        {
-                            tabOptions.find((option) => option.id === tab)
-                                ?.content
-                        }
+
+                    <div className="mt-4 md:mt-0 flex flex-col md:gap-2 md:w-[60%] h-full">
+                        <h2 className="text-4xl font-bold text-white mb-4">
+                            About Me
+                        </h2>
+                        <p className="text-sm md:text-base">
+                            Dynamic Frontend Software Engineer with over 5 years
+                            of hands-on experience in web development. Since
+                            2017, I have specialized in React.js, building and
+                            enhancing applications across diverse domains,
+                            including marketplaces, e-commerce platforms,
+                            internet banking systems, landing pages, and
+                            websites. My expertise also extends to modern
+                            technologies like Next.js, TypeScript, Redux.js, and
+                            React Native for developing native mobile apps.
+                        </p>
+                        <p className="text-sm md:text-base">
+                            I am adept at ensuring code quality and reliability
+                            through comprehensive unit and integration testing
+                            with Jest, as well as end-to-end testing with
+                            Cypress.js. My strong background also includes CI/CD
+                            pipelines, cloud services (AWS), containerization
+                            with Docker, and proficiency in SEO, accessibility,
+                            and performance optimization.
+                        </p>
+                        <p className="text-sm md:text-base">
+                            My expertise extends to optimizing system
+                            performance, designing scalable architectures,
+                            developing design systems, and implementing micro
+                            frontends. I'm passionate about technology and its
+                            potential to transform lives. This passion drives me
+                            to continuously learn and seek out new challenges.
+                        </p>
+                        <Image
+                            className="block sm:hidden mt-8 mb-2 rounded-xl"
+                            src="/images/jefferson-avatar-computer.svg"
+                            alt="about section"
+                            width={700}
+                            height={700}
+                        />
+                        <div className="flex flex-row justify-start mt-4">
+                            {tabOptions.map((option, index) => (
+                                <TabButton
+                                    key={index}
+                                    selectTab={() =>
+                                        tabChangeHandler(option.value)
+                                    }
+                                    active={tab === option.value}
+                                >
+                                    {option.label}
+                                </TabButton>
+                            ))}
+                        </div>
+                        <div className="relative mt-4 text-xs md:text-sm">
+                            {
+                                tabOptions.find((option) => option.id === tab)
+                                    ?.content
+                            }
+                        </div>
                     </div>
                 </div>
             </motion.div>

@@ -35,11 +35,7 @@ export const Hero = () => {
                             sequence={[
                                 "Jefferson Soares",
                                 1000,
-                                "Front-End Developer",
-                                1000,
-                                "Back-End Developer",
-                                1000,
-                                "Mobile Developer",
+                                "Software Engineer",
                                 1000
                             ]}
                             wrapper="span"
@@ -47,13 +43,16 @@ export const Hero = () => {
                             repeat={Infinity}
                         />
                     </h1>
-                    <p className="mb-6 text-sm sm:text-lg lg:text-xl text-[#ADB7BE]">
-                        I'm a full-stack developer, degraded in Systems Analysis
-                        and Development at the Universidade Paulista (UNIP) in
-                        Brazil. I have expertise in JavaScript and work with
-                        technologies such as React.js, Node.js, React Native,
-                        TypeScript, SQL, No-SQL, Unit tests, E2E tests, and many
-                        others.
+                    <p className="mb-6 text-sm leading-4 md:text-base text-[#ADB7BE]">
+                        Dynamic Frontend Software Engineer with over 5 years of
+                        hands-on experience in web development. Since 2017, I
+                        have specialized in React.js, building and enhancing
+                        applications across diverse domains, including
+                        marketplaces, e-commerce platforms, internet banking
+                        systems, landing pages, and websites. My expertise also
+                        extends to modern technologies like Next.js, TypeScript,
+                        Redux.js, and React Native for developing native mobile
+                        apps.
                     </p>
                     <div>
                         <Link
