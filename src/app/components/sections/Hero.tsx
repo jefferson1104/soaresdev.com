@@ -12,7 +12,7 @@ export const Hero = () => {
 
     /* Handlers */
     const downloadCVHandler = () => {
-        const file = "/documents/JEFFERSON_SOARES_RESUME_EN.pdf";
+        const file = "/documents/JEFFERSON_SOARES_RESUME.pdf";
         router.push(file);
     };
 
